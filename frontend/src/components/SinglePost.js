@@ -6,6 +6,7 @@ import Modal from 'react-modal';
 import * as API from '../services/api-helper';
 import AddEditPost from './AddEditPost';
 import {DELETE_POST, deletePost} from "../actions/index";
+import {dateFormatter} from '../utils/helpers';
 
 class SinglePost extends Component {
   static propTypes = {
@@ -70,7 +71,7 @@ class SinglePost extends Component {
   }
   render() {
       const {post} = this.props;
-      const date = post.timestamp;
+      const date = dateFormatter(post.timestamp);
 
     return (
       <div className="post">

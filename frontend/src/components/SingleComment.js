@@ -5,6 +5,7 @@ import Modal from 'react-modal';
 import * as API from '../services/api-helper';
 import AddEditComment from './AddEditComment';
 import {DELETE_COMMENT, deleteComment } from "../actions/index";
+import {dateFormatter} from '../utils/helpers';
 
 class SingleComment extends Component {
   constructor(props) {
@@ -36,7 +37,7 @@ class SingleComment extends Component {
   render() {
     const {isModalOpen} = this.state;
     const {comment} = this.props
-    const date = comment.timestamp;
+    const date = dateFormatter(comment.timestamp);
     const modalStyle = {
       content: {
         top: '10%',

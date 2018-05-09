@@ -26,3 +26,7 @@ export const sortedBy = (posts, sortingPref) => {
   }
   return returnValues;
 };
+export const dateFormatter = (timestamp) => {
+	var ts = new Date(timestamp);
+	return ts.toDateString();
+};
